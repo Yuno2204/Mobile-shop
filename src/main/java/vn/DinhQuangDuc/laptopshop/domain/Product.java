@@ -1,4 +1,4 @@
-package vn.hoidanit.laptopshop.domain;
+package vn.DinhQuangDuc.laptopshop.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

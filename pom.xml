@@ -9,7 +9,7 @@
 		<relativePath/>
 		<!-- lookup parent from repository -->
 	</parent>
-	<groupId>vn.hoidanit</groupId>
+	<groupId>vn.DinhQuangDuc</groupId>
 	<artifactId>laptopshop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>laptopshop</name>

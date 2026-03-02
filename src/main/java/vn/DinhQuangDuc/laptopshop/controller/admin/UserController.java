@@ -1,21 +1,20 @@
-package vn.hoidanit.laptopshop.controller.admin;
+package vn.DinhQuangDuc.laptopshop.controller.admin;
 
 import java.util.List;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import vn.hoidanit.laptopshop.domain.User;
-import vn.hoidanit.laptopshop.service.UploadService;
-import vn.hoidanit.laptopshop.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
+import vn.DinhQuangDuc.laptopshop.domain.User;
+import vn.DinhQuangDuc.laptopshop.service.UploadService;
+import vn.DinhQuangDuc.laptopshop.service.UserService;
 
 @Controller
 public class UserController {

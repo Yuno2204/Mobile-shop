@@ -1,4 +1,4 @@
-package vn.hoidanit.laptopshop.repository;
+package vn.DinhQuangDuc.laptopshop.repository;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import org.springframework.stereotype.Repository;
 
-import vn.hoidanit.laptopshop.domain.User;
+import vn.DinhQuangDuc.laptopshop.domain.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
