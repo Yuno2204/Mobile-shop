@@ -1,10 +1,10 @@
-package vn.DinhQuangDuc.laptopshop;
+package vn.DinhQuangDuc.mobileshop;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LaptopshopApplicationTests {
+class MobileshopApplicationTests {
 
 	@Test
 	void contextLoads() {

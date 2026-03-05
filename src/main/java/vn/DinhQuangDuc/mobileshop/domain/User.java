@@ -1,4 +1,4 @@
-package vn.DinhQuangDuc.laptopshop.domain;
+package vn.DinhQuangDuc.mobileshop.domain;
 
 import java.util.List;
 

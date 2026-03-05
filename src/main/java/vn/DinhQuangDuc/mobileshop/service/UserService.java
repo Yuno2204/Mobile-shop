@@ -1,13 +1,13 @@
-package vn.DinhQuangDuc.laptopshop.service;
+package vn.DinhQuangDuc.mobileshop.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import vn.DinhQuangDuc.laptopshop.domain.Role;
-import vn.DinhQuangDuc.laptopshop.domain.User;
-import vn.DinhQuangDuc.laptopshop.repository.RoleRepository;
-import vn.DinhQuangDuc.laptopshop.repository.UserRepository;
+import vn.DinhQuangDuc.mobileshop.domain.Role;
+import vn.DinhQuangDuc.mobileshop.domain.User;
+import vn.DinhQuangDuc.mobileshop.repository.RoleRepository;
+import vn.DinhQuangDuc.mobileshop.repository.UserRepository;
 
 @Service
 public class UserService {

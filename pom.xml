@@ -10,9 +10,9 @@
 		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>vn.DinhQuangDuc</groupId>
-	<artifactId>laptopshop</artifactId>
+	<artifactId>mobileshop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>laptopshop</name>
+	<name>mobileshop</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>

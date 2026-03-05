@@ -1,12 +1,12 @@
-package vn.DinhQuangDuc.laptopshop.controller.admin;
+package vn.DinhQuangDuc.mobileshop.controller.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class OrderController {
-    @GetMapping("/admin/order")
+public class DashboardController {
+    @GetMapping("/admin")
     public String getDashboard() {
-        return "admin/order/show";
+        return "admin/dashboard/show";
     }
 }

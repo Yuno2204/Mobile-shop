@@ -1,4 +1,4 @@
-package vn.DinhQuangDuc.laptopshop.controller.admin;
+package vn.DinhQuangDuc.mobileshop.controller.admin;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import vn.DinhQuangDuc.laptopshop.domain.User;
-import vn.DinhQuangDuc.laptopshop.service.UploadService;
-import vn.DinhQuangDuc.laptopshop.service.UserService;
+import vn.DinhQuangDuc.mobileshop.domain.User;
+import vn.DinhQuangDuc.mobileshop.service.UploadService;
+import vn.DinhQuangDuc.mobileshop.service.UserService;
 
 @Controller
 public class UserController {

@@ -1,4 +1,4 @@
-package vn.DinhQuangDuc.laptopshop.service;
+package vn.DinhQuangDuc.mobileshop.service;
 
 import java.io.BufferedOutputStream;
 import java.io.File;

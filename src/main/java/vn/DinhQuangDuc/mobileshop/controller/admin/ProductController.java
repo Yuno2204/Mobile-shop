@@ -1,4 +1,4 @@
-package vn.DinhQuangDuc.laptopshop.controller.admin;
+package vn.DinhQuangDuc.mobileshop.controller.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
