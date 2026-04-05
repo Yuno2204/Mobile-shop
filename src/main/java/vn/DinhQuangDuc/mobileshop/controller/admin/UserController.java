@@ -29,12 +29,12 @@ public class UserController {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @GetMapping("/")
-    public String getHomePage(Model model) {
-        model.addAttribute("cen", "test");
-        model.addAttribute("cenlove", "from controller with model");
-        return "hello";
-    }
+    // @GetMapping("/")
+    // public String getHomePage(Model model) {
+    // model.addAttribute("cen", "test");
+    // model.addAttribute("cenlove", "from controller with model");
+    // return "hello";
+    // }
 
     @GetMapping("/admin/user")
     public String getUserPage(Model model) {
