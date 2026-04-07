@@ -8,9 +8,9 @@
                 <meta charset="utf-8" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-                <meta name="description" content="Đinh Quang Đức - Dự án laptopshop" />
+                <meta name="description" content="Đinh Quang Đức - Dự án Mobileshop" />
                 <meta name="author" content="Đinh Quang Đức" />
-                <title>Dashboard</title>
+                <title>Danh sách sản phẩm</title>
                 <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
                 <link href="/css/styles.css" rel="stylesheet" />
                 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -23,11 +23,52 @@
                     <div id="layoutSidenav_content">
                         <main>
                             <div class="container-fluid px-4">
-                                <h1 class="mt-4">Quản lý Products</h1>
+                                <h1 class="mt-4">Quản lý Sản Phẩm</h1>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item active"><a href="/admin">Dashboard</a></li>
                                 </ol>
-                                <li class="breadcrumb-item active">product</li>
+                                <div class="container mt-5">
+                                    <div class="row">
+                                        <div class="clo-12 mx-auto">
+                                            <div class="d-flex justify-content-between">
+                                                <h3>Danh sách sản phẩm</h3>
+                                                <a href="/admin/product/create" class="btn btn-primary">
+                                                    Thêm sản phẩm</a>
+                                            </div>
+                                            <hr />
+                                            <table class="table table-bordered table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Name</th>
+                                                        <th>Price</th>
+                                                        <th>Factory</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <c:forEach var="product" items="${products1}">
+                                                        <tr>
+                                                            <th>${product.id}</th>
+                                                            <td>${product.name}</td>
+                                                            <td>${product.price}</td>
+                                                            <td>${product.factory}</td>
+                                                            <td>
+                                                                <a href="/admin/product/${product.id}"
+                                                                    class="btn btn-success">Xem chi tiết</a>
+                                                                <a href="/admin/product/update/${product.id}"
+                                                                    class="btn btn-warning mx-2">Cập nhật</a>
+                                                                <a href="/admin/product/delete/${product.id}"
+                                                                    class="btn btn-danger">Xóa</a>
+                                                            </td>
+                                                        </tr>
+                                                    </c:forEach>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </main>
                         <jsp:include page="../layout/footer.jsp"></jsp:include>
