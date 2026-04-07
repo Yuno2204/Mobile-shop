@@ -36,12 +36,13 @@
                       </div>
                       <hr />
                       <div class="card" style="width: 60%">
-                        <div class="card-header">User Information</div>
+                        <div class="card-header">Thông tin người dùng</div>
                         <ul class="list-group list-group-flush">
                           <li class="list-group-item">ID: ${user.id}</li>
                           <li class="list-group-item">Email: ${user.email}</li>
-                          <li class="list-group-item">Full Name:${user.fullName}</li>
-                          <li class="list-group-item">Address: ${user.address}</li>
+                          <li class="list-group-item">Họ và tên: ${user.fullName}</li>
+                          <li class="list-group-item">Số điện thoại: ${user.phone}</li>
+                          <li class="list-group-item">Địa chỉ: ${user.address}</li>
                         </ul>
                       </div>
                       <a href="/admin/user" class="btn btn-success mt-3">Quay lại</a>

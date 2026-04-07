@@ -41,9 +41,10 @@
                           <tr>
                             <th>ID</th>
                             <th>Email</th>
-                            <th>Full Name</th>
-                            <th>Role</th>
-                            <th>Action</th>
+                            <th>Họ và tên</th>
+                            <th>Số điện thoại</th>
+                            <th>Vai trò</th>
+                            <th>Chúc năng</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -52,6 +53,7 @@
                               <th>${user.id}</th>
                               <td>${user.email}</td>
                               <td>${user.fullName}</td>
+                              <td>${user.phone}</td>
                               <td>${user.role.name}</td>
                               <td>
                                 <a href="/admin/user/${user.id}" class="btn btn-success">Xem chi tiết</a>

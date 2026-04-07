@@ -40,18 +40,20 @@
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>
-                                                        <th>Name</th>
-                                                        <th>Price</th>
-                                                        <th>Factory</th>
-                                                        <th>Action</th>
+                                                        <th>Tên sản phẩm</th>
+                                                        <th>Giá sản phẩm</th>
+                                                        <th>Số lượng</th>
+                                                        <th>Thương hiệu</th>
+                                                        <th>Chức năng</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <c:forEach var="product" items="${products1}">
+                                                    <c:forEach var="product" items="${products}">
                                                         <tr>
                                                             <th>${product.id}</th>
                                                             <td>${product.name}</td>
                                                             <td>${product.price}</td>
+                                                            <td>${product.quantity}</td>
                                                             <td>${product.factory}</td>
                                                             <td>
                                                                 <a href="/admin/product/${product.id}"

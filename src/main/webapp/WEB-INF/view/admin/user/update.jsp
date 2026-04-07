@@ -43,15 +43,15 @@
                           <form:input type="email" class="form-control" path="email" disabled="true" />
                         </div>
                         <div class="mb-3">
-                          <label class="form-label">Phone number:</label>
+                          <label class="form-label">Số điện thoại:</label>
                           <form:input type="text" class="form-control" path="phone" />
                         </div>
                         <div class="mb-3">
-                          <label class="form-label">Full Name:</label>
+                          <label class="form-label">Họ và tên:</label>
                           <form:input type="text" class="form-control" path="fullName" />
                         </div>
                         <div class="mb-3">
-                          <label class="form-label">Address:</label>
+                          <label class="form-label">Địa chỉ:</label>
                           <form:input type="text" class="form-control" path="address" />
                         </div>
                         <div class="d-flex justify-content-between">
