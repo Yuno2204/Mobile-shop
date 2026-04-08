@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -56,6 +57,75 @@ public class ProductController {
         String image = this.uploadService.handleSaveUploadFile(file, "product");
         product.setImage(image);
         this.productService.createProduct(product);
+        return "redirect:/admin/product";
+    }
+
+    @GetMapping("/admin/product/{id}")
+    public String getUserDetailPage(Model model, @PathVariable long id) {
+        Product product = this.productService.getProductByID(id);
+        model.addAttribute("product", product);
+        model.addAttribute("id", id);
+        return "admin/product/detail";
+    }
+
+    @GetMapping("/admin/product/update/{id}") // GET
+    public String getUpdateProductPage(Model model, @PathVariable long id) {
+        Product crrentProduct = this.productService.getProductByID(id);
+        model.addAttribute("newProduct", crrentProduct);
+        return "admin/product/update";
+    }
+
+    @PostMapping("/admin/product/update")
+    public String postUpdateProductPage(
+            Model model,
+            @ModelAttribute("newProduct") @Valid Product product,
+            BindingResult bindingResult,
+            @RequestParam("imagesFile") MultipartFile file) {
+
+        // debug lỗi validate
+        List<FieldError> errors = bindingResult.getFieldErrors();
+        for (FieldError error : errors) {
+            System.out.println(">>>> " + error.getField() + " - " + error.getDefaultMessage());
+        }
+
+        if (bindingResult.hasErrors()) {
+            return "admin/product/update";
+        }
+
+        Product currentProduct = this.productService.getProductByID(product.getId());
+
+        if (currentProduct != null) {
+            // xử lý upload ảnh nếu có
+            if (file != null && !file.isEmpty()) {
+                String image = this.uploadService.handleSaveUploadFile(file, "product");
+                currentProduct.setImage(image);
+            }
+
+            // update field đúng của Product
+            currentProduct.setName(product.getName());
+            currentProduct.setPrice(product.getPrice());
+            currentProduct.setQuantity(product.getQuantity());
+            currentProduct.setShortDesc(product.getShortDesc());
+            currentProduct.setDetailDesc(product.getDetailDesc());
+            currentProduct.setFactory(product.getFactory());
+            currentProduct.setTarget(product.getTarget());
+
+            this.productService.handleSaveProduct(currentProduct);
+        }
+
+        return "redirect:/admin/product";
+    }
+
+    @GetMapping("/admin/product/delete/{id}") // GET
+    public String getDeleteUserPage(Model model, @PathVariable long id) {
+        model.addAttribute("id", id);
+        model.addAttribute("newProduct", new Product());
+        return "admin/product/delete";
+    }
+
+    @PostMapping("/admin/product/delete") // GET
+    public String postDeleteUserPage(Model model, @ModelAttribute("newProduct") Product product) {
+        this.productService.deleteProduct(product.getId());
         return "redirect:/admin/product";
     }
 }

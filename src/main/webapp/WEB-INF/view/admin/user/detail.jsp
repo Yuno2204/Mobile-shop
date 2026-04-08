@@ -38,6 +38,12 @@
                       <div class="card" style="width: 60%">
                         <div class="card-header">Thông tin người dùng</div>
                         <ul class="list-group list-group-flush">
+                          <li class="list-group-item text-center">
+                            <c:if test="${not empty user.avatar}">
+                              <img src="/images/avatar/${user.avatar}" alt="avatar"
+                                style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" />
+                            </c:if>
+                          </li>
                           <li class="list-group-item">ID: ${user.id}</li>
                           <li class="list-group-item">Email: ${user.email}</li>
                           <li class="list-group-item">Họ và tên: ${user.fullName}</li>

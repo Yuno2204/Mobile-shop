@@ -22,4 +22,16 @@ public class ProductService {
     public List<Product> ferchProducts() {
         return this.productRepository.findAll();
     }
+
+    public Product getProductByID(long id) {
+        return this.productRepository.findById(id);
+    }
+
+    public void deleteProduct(long id) {
+        this.productRepository.deleteById(id);
+    }
+
+    public Product handleSaveProduct(Product product) {
+        return this.productRepository.save(product);
+    }
 }

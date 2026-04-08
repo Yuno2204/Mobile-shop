@@ -7,5 +7,5 @@ import vn.DinhQuangDuc.mobileshop.domain.Product;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-
+    Product findById(long id); // null
 }
