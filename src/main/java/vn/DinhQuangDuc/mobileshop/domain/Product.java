@@ -1,5 +1,6 @@
 package vn.DinhQuangDuc.mobileshop.domain;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,10 +25,9 @@ public class Product {
     private double price;
     private String image;
     @NotBlank(message = "Mô tả chi tiết không được để trống")
-    @Size(max = 2000, message = "Mô tả chi tiết tối đa 2000 ký tự")
+    @Column(columnDefinition = "MEDIUMTEXT")
     private String detailDesc;
     @NotBlank(message = "Mô tả ngắn không được để trống")
-    @Size(max = 100, message = "Mô tả ngắn tối đa 100 ký tự")
     private String shortDesc;
     @NotNull(message = "Số lượng không được để trống")
     @Min(value = 1, message = "Số lượng phải > 0")

@@ -493,5 +493,209 @@
 .footer .footer-item p.mb-4 {
     line-height: 35px;
 }
+
 /*** Footer End ***/
 
+/* ===== FORCE OVERRIDE THEME ===== */
+
+:root {
+    --bs-primary: #d70018;
+    --bs-secondary: #ff4d4f;
+    --bs-light: #f5f5f7;
+    --bs-dark: #1f1f1f;
+    --bs-white: #ffffff;
+}
+
+/* Global */
+body {
+    background: #f5f5f7 !important;
+    color: #111827 !important;
+}
+
+a,
+.nav-link,
+.link-primary,
+.text-primary {
+    color: #d70018 !important;
+}
+
+a:hover,
+.nav-link:hover,
+.nav-link:focus,
+.link-primary:hover {
+    color: #b80014 !important;
+}
+
+/* Buttons */
+.btn-primary,
+.bg-primary {
+    background-color: #d70018 !important;
+    border-color: #d70018 !important;
+    color: #fff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #b80014 !important;
+    border-color: #b80014 !important;
+    color: #fff !important;
+    box-shadow: 0 0 0 0.25rem rgba(215, 0, 24, 0.2) !important;
+}
+
+.btn-outline-primary {
+    color: #d70018 !important;
+    border-color: #d70018 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #d70018 !important;
+    border-color: #d70018 !important;
+    color: #fff !important;
+}
+
+/* Secondary */
+.btn-secondary,
+.bg-secondary {
+    background-color: #ff4d4f !important;
+    border-color: #ff4d4f !important;
+}
+
+.text-secondary,
+.link-secondary {
+    color: #ff4d4f !important;
+}
+
+/* Form */
+.form-control:focus,
+.form-select:focus {
+    border-color: rgba(215, 0, 24, 0.4) !important;
+    box-shadow: 0 0 0 0.25rem rgba(215, 0, 24, 0.12) !important;
+}
+
+/* Checkbox radio */
+.form-check-input:focus {
+    border-color: rgba(215, 0, 24, 0.4) !important;
+    box-shadow: 0 0 0 0.25rem rgba(215, 0, 24, 0.12) !important;
+}
+
+.form-check-input:checked {
+    background-color: #d70018 !important;
+    border-color: #d70018 !important;
+}
+
+/* Range */
+.form-range::-webkit-slider-thumb {
+    background-color: #d70018 !important;
+}
+.form-range::-moz-range-thumb {
+    background-color: #d70018 !important;
+}
+
+/* Pagination */
+.page-link {
+    color: #d70018 !important;
+}
+
+.page-link:hover,
+.page-link:focus {
+    color: #b80014 !important;
+    box-shadow: 0 0 0 0.25rem rgba(215, 0, 24, 0.12) !important;
+}
+
+.page-item.active .page-link {
+    background-color: #d70018 !important;
+    border-color: #d70018 !important;
+    color: #fff !important;
+}
+
+/* Nav pills / tabs */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: #d70018 !important;
+    color: #fff !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #d70018 !important;
+    color: #fff !important;
+}
+
+/* Borders */
+.border-primary {
+    border-color: #d70018 !important;
+}
+.border-secondary {
+    border-color: #ff4d4f !important;
+}
+
+/* Text/bg utility */
+.bg-light {
+    background-color: #f5f5f7 !important;
+}
+.bg-dark {
+    background-color: #111827 !important;
+}
+.text-dark {
+    color: #111827 !important;
+}
+
+/* Price */
+.price,
+.product-price,
+.fw-bold.fs-5,
+p.fs-5.fw-bold {
+    color: #d70018 !important;
+    font-weight: 800 !important;
+}
+
+/* Hero button */
+.carousel-item a {
+    background: #d70018 !important;
+    color: #fff !important;
+}
+
+/* Arrow */
+.carousel-control-next,
+.carousel-control-prev {
+    background: #d70018 !important;
+}
+
+/* Badge */
+.badge {
+    background-color: #d70018 !important;
+}
+
+/* Back to top */
+.back-to-top {
+    background: #d70018 !important;
+    color: #fff !important;
+}
+.fruite-img {
+
+    border: 1px solid #d70018; /* viền đỏ giống CellphoneS */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.fruite-item:hover .fruite-img img {
+    transform: scale(1.05);
+}
+.highlight-section {
+    border: 2px solid #d70018;
+    border-radius: 20px;
+    padding: 30px;
+    background: #ffffff;  /* nền đỏ rất nhạt */
+}
+.highlight-section h1 {
+    color: #d70018;
+    font-weight: 800;
+}
+.hero-header {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+}
+.carousel-inner {
+    border-radius: 20px;
+    overflow: hidden;
+}
