@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import vn.DinhQuangDuc.mobileshop.domain.Role;
 import vn.DinhQuangDuc.mobileshop.domain.User;
+import vn.DinhQuangDuc.mobileshop.dto.RegisterDTO;
 import vn.DinhQuangDuc.mobileshop.repository.RoleRepository;
 import vn.DinhQuangDuc.mobileshop.repository.UserRepository;
 
@@ -47,5 +48,13 @@ public class UserService {
 
     public Role getRoleByName(String name) {
         return this.roleRepository.findByName(name);
+    }
+
+    public User registerDTOtoUser(RegisterDTO registerDTO) {
+        User user = new User();
+        user.setFullName(registerDTO.getFirstName() + "" + registerDTO.getLastName());
+        user.setEmail(registerDTO.getEmail());
+        user.setPassword(registerDTO.getPassword());
+        return user;
     }
 }

@@ -2,7 +2,6 @@ package vn.DinhQuangDuc.mobileshop.controller.admin;
 
 import java.util.List;
 
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,7 +17,6 @@ import jakarta.validation.Valid;
 import vn.DinhQuangDuc.mobileshop.domain.Product;
 import vn.DinhQuangDuc.mobileshop.service.ProductService;
 import vn.DinhQuangDuc.mobileshop.service.UploadService;
-import vn.DinhQuangDuc.mobileshop.service.UserService;
 
 @Controller
 public class ProductController {
