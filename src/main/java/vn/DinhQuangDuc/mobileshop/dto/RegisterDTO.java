@@ -1,5 +1,8 @@
 package vn.DinhQuangDuc.mobileshop.dto;
 
+import vn.DinhQuangDuc.mobileshop.service.validator.RegisterChecked;
+
+@RegisterChecked
 public class RegisterDTO {
     private String firstName;
     private String lastName;
