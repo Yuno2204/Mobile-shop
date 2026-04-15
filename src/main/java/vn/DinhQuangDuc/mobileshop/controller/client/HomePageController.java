@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import vn.DinhQuangDuc.mobileshop.domain.Product;
 import vn.DinhQuangDuc.mobileshop.domain.User;
@@ -63,5 +65,10 @@ public class HomePageController {
     @GetMapping("/login")
     public String getloginPage(Model model) {
         return "client/auth/login";
+    }
+
+    @GetMapping("/access-deny")
+    public String getDenyPage(Model model) {
+        return "client/auth/deny";
     }
 }

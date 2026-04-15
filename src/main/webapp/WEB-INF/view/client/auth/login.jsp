@@ -1,81 +1,115 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-        <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-            <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-                <!DOCTYPE html>
-                <html lang="en">
 
-                <head>
-                    <meta charset="utf-8" />
-                    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-                    <meta name="description" content="" />
-                    <meta name="author" content="" />
-                    <title>Login - SB Admin</title>
-                    <link href="css/styles.css" rel="stylesheet" />
-                    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
-                        crossorigin="anonymous"></script>
-                </head>
+        <!DOCTYPE html>
+        <html lang="en">
 
-                <body>
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Đăng nhập - Mobile Shop</title>
 
-                    <div class="login-wrapper">
-                        <div class="login-card">
+            <link href="/css/styles.css" rel="stylesheet" />
+            <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        </head>
 
-                            <h3 class="text-center mb-4 fw-bold">Đăng nhập</h3>
+        <body class="bg-primary">
 
-                            <form:form method="post" action="/login" modelAttribute="loginUser">
+            <div id="layoutAuthentication">
+                <div id="layoutAuthentication_content">
 
-                                <!-- EMAIL -->
-                                <div class="mb-3">
-                                    <spring:bind path="loginUser.email">
-                                        <label class="form-label">Email</label>
-                                        <form:input path="email"
-                                            class="form-control ${status.error ? 'is-invalid' : ''}"
-                                            placeholder="example@gmail.com" />
+                    <main>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-5">
 
-                                        <c:if test="${status.error}">
-                                            <div class="invalid-feedback d-block">
-                                                ${status.errorMessages[0]}
+                                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+
+                                        <!-- HEADER -->
+                                        <div class="card-header">
+                                            <h3 class="text-center font-weight-light my-4">Đăng nhập</h3>
+                                        </div>
+
+                                        <!-- BODY -->
+                                        <div class="card-body">
+
+                                            <!-- ERROR -->
+                                            <c:if test="${param.error != null}">
+                                                <div class="alert alert-danger text-center">
+                                                    Email hoặc mật khẩu không đúng
+                                                </div>
+                                            </c:if>
+
+                                            <!-- LOGOUT -->
+                                            <c:if test="${param.logout != null}">
+                                                <div class="alert alert-success text-center">
+                                                    Đăng xuất thành công
+                                                </div>
+                                            </c:if>
+
+                                            <!-- FORM -->
+                                            <form method="post" action="/login">
+
+                                                <!-- CSRF -->
+                                                <input type="hidden" name="${_csrf.parameterName}"
+                                                    value="${_csrf.token}" />
+
+                                                <!-- EMAIL -->
+                                                <div class="form-floating mb-3">
+                                                    <input class="form-control" id="inputEmail" type="text"
+                                                        name="username" placeholder="Nhập email" />
+                                                    <label for="inputEmail">Email</label>
+                                                </div>
+
+                                                <!-- PASSWORD -->
+                                                <div class="form-floating mb-3">
+                                                    <input class="form-control" id="inputPassword" type="password"
+                                                        name="password" placeholder="Nhập mật khẩu" />
+                                                    <label for="inputPassword">Mật khẩu</label>
+                                                </div>
+
+                                                <!-- REMEMBER -->
+                                                <div class="form-check mb-3">
+                                                    <input class="form-check-input" id="inputRememberPassword"
+                                                        type="checkbox" name="remember-me" />
+                                                    <label class="form-check-label" for="inputRememberPassword">
+                                                        Ghi nhớ đăng nhập
+                                                    </label>
+                                                </div>
+
+                                                <!-- BUTTON -->
+                                                <div
+                                                    class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                                    <a class="small" href="/forgot-password">Quên mật khẩu?</a>
+                                                    <button class="btn btn-primary" type="submit">
+                                                        Đăng nhập
+                                                    </button>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                        <!-- FOOTER -->
+                                        <div class="card-footer text-center py-3">
+                                            <div class="small">
+                                                <a href="/register">Chưa có tài khoản? Đăng ký</a>
                                             </div>
-                                        </c:if>
-                                    </spring:bind>
+                                        </div>
+
+
+                                    </div>
                                 </div>
+                            </div>
+                    </main>
 
-                                <!-- PASSWORD -->
-                                <div class="mb-3">
-                                    <spring:bind path="loginUser.password">
-                                        <label class="form-label">Mật khẩu</label>
-                                        <form:password path="password"
-                                            class="form-control ${status.error ? 'is-invalid' : ''}"
-                                            placeholder="Nhập mật khẩu" />
+                </div>
 
-                                        <c:if test="${status.error}">
-                                            <div class="invalid-feedback d-block">
-                                                ${status.errorMessages[0]}
-                                            </div>
-                                        </c:if>
-                                    </spring:bind>
-                                </div>
 
-                                <!-- BUTTON -->
-                                <div class="d-grid mt-4">
-                                    <button type="submit" class="btn btn-login text-white">
-                                        Đăng nhập
-                                    </button>
-                                </div>
 
-                                <!-- LINK -->
-                                <div class="text-center mt-3">
-                                    Chưa có tài khoản?
-                                    <a href="/register" class="text-primary fw-bold">Đăng ký</a>
-                                </div>
+            </div>
 
-                            </form:form>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="/js/scripts.js"></script>
 
-                        </div>
-                    </div>
+        </body>
 
-                </body>
-
-                </html>
+        </html>
